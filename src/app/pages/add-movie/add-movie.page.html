@@ -75,4 +75,11 @@
 
   </div>
 
+   <ion-toast
+  [isOpen]="isToastOpen"
+  [message]="toastMessage"
+  [duration]="2500"
+  (didDismiss)="isToastOpen = false">
+</ion-toast>
+
 </ion-content>

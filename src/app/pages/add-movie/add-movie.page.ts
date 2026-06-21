@@ -10,7 +10,8 @@ import {
   IonSelectOption,
   IonButton,
   IonToggle,
-  IonIcon
+  IonIcon,
+  IonToast
 } from '@ionic/angular/standalone';
 
 import { ActivatedRoute, Router } from '@angular/router';
@@ -38,7 +39,8 @@ import { Movie } from '../../models/movie.model';
     IonSelectOption,
     IonButton,
     IonToggle,
-    IonIcon
+    IonIcon,
+    IonToast
   ]
 })
 export class AddMoviePage implements OnInit {
@@ -52,6 +54,9 @@ export class AddMoviePage implements OnInit {
   watched = false;
   movieId = '';
   isEditMode = false;
+
+  toastMessage = '';
+  isToastOpen = false;
 
   genres = [
     'Komedija',
@@ -86,12 +91,12 @@ export class AddMoviePage implements OnInit {
 
   sacuvajFilm() {
   if (!this.title.trim()) {
-  alert('Naziv filma je obavezan.');
+    this.prikaziPoruku('Naziv filma je obavezan.');
   return;
 }
 
 if (this.rating && (this.rating < 1 || this.rating > 10)) {
-  alert('Ocena mora biti između 1 i 10.');
+  this.prikaziPoruku('Ocena mora biti između 1 i 10.');
   return;
 }
   const userId = this.authService.getUserId();
@@ -146,5 +151,10 @@ ucitajFilm() {
     }
   });
 }
+
+prikaziPoruku(message: string) {
+    this.toastMessage = message;
+    this.isToastOpen = true;
+  }
 
 }
