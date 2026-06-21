@@ -1,0 +1,61 @@
+<ion-content [fullscreen]="true">
+
+  <div class="login-container">
+
+    <div class="logo-section">
+      <ion-icon name="film-outline"></ion-icon>
+      <h1>Moja filmska kolekcija</h1>
+      <p>Prijavite se na svoj nalog</p>
+    </div>
+
+    <ion-card>
+
+      <ion-card-content>
+
+        <ion-item>
+          <ion-input
+            label="Email"
+            labelPlacement="floating"
+            type="email"
+            [(ngModel)]="email">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Lozinka"
+            labelPlacement="floating"
+            type="password"
+            [(ngModel)]="password">
+          </ion-input>
+        </ion-item>
+
+        <ion-button
+          expand="block"
+          class="login-btn"
+          (click)="login()">
+          Prijavi se
+        </ion-button>
+
+        <ion-button
+          fill="clear"
+          expand="block"
+          class="register-btn"
+          routerLink="/register">
+          Nemate nalog? Registrujte se
+        </ion-button>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+  <ion-toast
+  [isOpen]="isToastOpen"
+  [message]="toastMessage"
+  [duration]="2500"
+  (didDismiss)="isToastOpen = false">
+</ion-toast>
+
+</ion-content>

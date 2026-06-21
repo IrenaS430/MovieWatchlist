@@ -1,0 +1,191 @@
+ion-content {
+  --background: linear-gradient(
+    135deg,
+    #c8b6ff 0%,
+    #b8c0ff 50%,
+    #d0bfff 100%
+  );
+}
+
+.home-container {
+  min-height: 100vh;
+  padding: 34px 22px;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.app-icon {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.app-icon ion-icon {
+  font-size: 52px;
+  color: white;
+}
+
+.header-section h1 {
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.header-section p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-size: 14px;
+}
+
+.create-btn {
+  height: 54px;
+  margin: 22px 0 30px;
+
+  --border-radius: 18px;
+  --background: #7c4dff;
+  --background-hover: #6a3ff0;
+
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  box-shadow: 0 10px 24px rgba(124, 77, 255, 0.35);
+}
+
+.list-section h2 {
+  color: white;
+  font-size: 22px;
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.empty-text {
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.movie-list-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 17px;
+  margin-bottom: 13px;
+
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow: 0 10px 24px rgba(80, 50, 140, 0.16);
+}
+
+.list-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.list-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+  background: #f1eaff;
+
+  font-size: 24px;
+}
+
+.movie-list-card h3 {
+  margin: 0;
+  color: #333;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.movie-list-card p {
+  margin: 5px 0 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.arrow-icon {
+  color: #7c4dff;
+  font-size: 22px;
+}
+
+.logout-btn {
+  margin-top: 24px;
+  height: 48px;
+
+  --border-radius: 14px;
+  --color: white;
+
+  font-weight: 700;
+}
+
+.card-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+.delete-icon {
+
+  color: #d9534f;
+
+  font-size: 22px;
+
+}
+
+.sort-item {
+  margin: 0 0 18px;
+  border-radius: 18px;
+
+  --background: rgba(255, 255, 255, 0.96);
+  --border-radius: 18px;
+  --padding-start: 16px;
+  --inner-padding-end: 12px;
+
+  box-shadow: 0 10px 24px rgba(80, 50, 140, 0.16);
+}
+
+.sort-item ion-icon {
+  color: #7c4dff;
+  font-size: 22px;
+}
+
+.sort-item ion-select {
+  width: 100%;
+  color: #333;
+  font-weight: 600;
+}
+
+.created-date {
+
+  margin-top: 4px;
+
+  font-size: 12px;
+
+  color: #9b9b9b;
+
+}

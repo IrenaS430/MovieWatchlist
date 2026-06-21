@@ -1,0 +1,96 @@
+<ion-content [fullscreen]="true">
+
+  <div class="home-container">
+
+    <div class="header-section">
+      <div class="app-icon">
+        <ion-icon name="film-outline"></ion-icon>
+      </div>
+
+      <h1>Moja filmska kolekcija</h1>
+      <p>Dobrodošli, {{ ime  }}</p>
+    </div>
+
+    <ion-button expand="block" class="create-btn" (click)="dodajListu()">
+      <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+      Kreiraj novu listu
+    </ion-button>
+
+    <div class="list-section"  *ngIf="lists.length > 0">
+
+      <ion-item class="sort-item" lines="none">
+        <ion-icon name="swap-vertical-outline" slot="start"></ion-icon>
+
+        <ion-select
+          label="Sortiranje"
+          interface="popover"
+          [(ngModel)]="sortOption"
+          (ionChange)="sortirajListu()">
+
+          <ion-select-option value="newest">
+            Najnovije prvo
+          </ion-select-option>
+
+          <ion-select-option value="oldest">
+            Najstarije prvo
+          </ion-select-option>
+
+          <ion-select-option value="az">
+            Naziv rastuce
+          </ion-select-option>
+
+          <ion-select-option value="za">
+            Naziv opadajuce
+          </ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+      <h2>Moje liste</h2>
+
+      <p class="empty-text" *ngIf="lists.length === 0">
+        Još uvek nemate kreirane liste.
+      </p>
+
+      <div class="movie-list-card" *ngFor="let list of lists">
+        <div class="list-left">
+          <div class="list-icon">🎬</div>
+
+          <div>
+            <h3>{{ list.name }}</h3>
+           <p>{{ list.description || 'Bez opisa' }}</p>
+           <p class="created-date">
+            📅 {{ ispisiDatum(list.createdAt) }}
+          </p>
+          </div>
+        </div>
+
+        <!-- <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon> -->
+      <div class="card-actions">
+    <ion-button fill="clear" size="small" (click)="izmeniListu(list);  $event.stopPropagation()">
+      Izmeni
+    </ion-button>
+
+        <ion-icon
+          name="trash-outline"
+          class="delete-icon"
+          (click)="obrisiListu(list);  $event.stopPropagation()" >
+        </ion-icon>
+
+        <ion-icon
+          name="chevron-forward-outline"
+          class="arrow-icon">
+        </ion-icon>
+
+      </div>
+      </div>
+    </div>
+
+    <ion-button expand="block" fill="clear" class="logout-btn" (click)="logout()">
+      <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      Odjavi se
+    </ion-button>
+
+  </div>
+
+</ion-content>
