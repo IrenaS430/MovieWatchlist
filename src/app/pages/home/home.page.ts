@@ -311,6 +311,17 @@ sortirajListu() {
 
 }
 
+otvoriFilm(list: MovieList) {
+    if (!list.id) {
+      return;
+    }
+
+    this.router.navigate(['/movies', list.id], {
+      queryParams: {
+        name: list.name
+      }
+    });
+  }
 
 
 

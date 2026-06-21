@@ -1,0 +1,78 @@
+<ion-content [fullscreen]="true">
+
+  <div class="add-movie-container">
+
+    <div class="top-bar">
+      <ion-button fill="clear" class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+
+      <div>
+       <h1>{{ isEditMode ? 'Izmeni film' : 'Dodaj film' }}</h1>
+        <p>Unesite podatke o filmu</p>
+      </div>
+    </div>
+
+    <div class="form-card">
+
+      <ion-item lines="none">
+        <ion-input
+          label="Naziv filma"
+          labelPlacement="floating"
+          [(ngModel)]="title">
+        </ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-select
+          label="Žanr"
+          labelPlacement="floating"
+          interface="popover"
+          [(ngModel)]="genre">
+
+          <ion-select-option
+            *ngFor="let g of genres"
+            [value]="g">
+            {{ g }}
+          </ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input
+          label="Godina"
+          labelPlacement="floating"
+          type="number"
+          [(ngModel)]="year">
+        </ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-select
+          label="Ocena"
+          labelPlacement="floating"
+          interface="popover"
+          [(ngModel)]="rating">
+
+          <ion-select-option *ngFor="let r of [1,2,3,4,5,6,7,8,9,10]" [value]="r">
+            {{ r }}
+          </ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+      <ion-item lines="none" class="toggle-item">
+        <ion-label>Odgledan film</ion-label>
+        <ion-toggle [(ngModel)]="watched"></ion-toggle>
+      </ion-item>
+
+      <ion-button expand="block" class="save-btn" (click)="sacuvajFilm()">
+        {{ isEditMode ? 'Sačuvaj izmene' : 'Sačuvaj film' }}
+      </ion-button>
+
+    </div>
+
+  </div>
+
+</ion-content>

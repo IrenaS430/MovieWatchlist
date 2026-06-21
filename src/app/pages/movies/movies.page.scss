@@ -1,0 +1,165 @@
+ion-content {
+  --background: linear-gradient(
+    135deg,
+    #c8b6ff 0%,
+    #b8c0ff 50%,
+    #d0bfff 100%
+  );
+}
+
+.movies-container {
+  min-height: 100vh;
+  padding: 34px 22px;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.back-btn {
+  --color: white;
+}
+
+.top-bar h1 {
+  margin: 0;
+  color: white;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.top-bar p {
+  margin: 4px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.create-btn {
+  height: 54px;
+  --border-radius: 18px;
+  --background: #7c4dff;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(124, 77, 255, 0.35);
+}
+
+.movies-section {
+  margin-top: 25px;
+}
+
+.movies-section h2 {
+ color: white;
+  margin-bottom: 18px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.empty-text {
+  color: rgba(255,255,255,.9);
+  text-align: center;
+  margin-top: 30px;
+}
+
+.movie-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 22px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 10px 24px rgba(80, 50, 140, 0.16);
+}
+
+.movie-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.movie-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: #f1eaff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+}
+
+.movie-details h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.movie-details p {
+  margin: 5px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.rating {
+  color: #7c4dff;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.watched {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.planned {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.movie-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.movie-actions ion-button {
+  font-size: 12px;
+  --padding-start: 0;
+}
+
+.filter-segment {
+  margin: 20px 0;
+  padding: 6px;
+
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.filter-segment ion-segment-button {
+  --color: #7c4dff;
+  --color-checked: white;
+  --background-checked: #7c4dff;
+  --border-radius: 14px;
+  font-weight: 700;
+}
+
+ion-searchbar {
+
+  --background: rgba(255,255,255,.96);
+
+  --border-radius: 18px;
+
+  margin-bottom: 20px;
+
+}

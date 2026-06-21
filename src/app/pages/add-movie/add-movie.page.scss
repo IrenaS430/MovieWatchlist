@@ -1,0 +1,68 @@
+ion-content {
+  --background: linear-gradient(
+    135deg,
+    #c8b6ff 0%,
+    #b8c0ff 50%,
+    #d0bfff 100%
+  );
+}
+
+.add-movie-container {
+  min-height: 100vh;
+  padding: 34px 22px;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.back-btn {
+  --color: white;
+}
+
+.top-bar h1 {
+  margin: 0;
+  color: white;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.top-bar p {
+  margin: 4px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.form-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(80, 50, 140, 0.16);
+}
+
+ion-item {
+  margin-bottom: 14px;
+  --background: #f7f3ff;
+  --border-radius: 16px;
+  --padding-start: 14px;
+}
+
+.toggle-item {
+  --background: transparent;
+}
+
+.save-btn {
+  height: 54px;
+  margin-top: 18px;
+
+  --border-radius: 18px;
+  --background: #7c4dff;
+  --background-hover: #6a3ff0;
+
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(124, 77, 255, 0.35);
+}

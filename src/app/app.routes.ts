@@ -20,4 +20,24 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/home/home.page').then( m => m.HomePage),
     canActivate: [authGuard]
   },
+    {
+    path: 'movies',
+    loadComponent: () => import('./pages/movies/movies.page').then( m => m.MoviesPage)
+  },
+  {
+    path: 'movies/:listId',
+    loadComponent: () => import('./pages/movies/movies.page').then(m => m.MoviesPage),
+  },
+  {
+    path: 'add-movie',
+    loadComponent: () => import('./pages/add-movie/add-movie.page').then( m => m.AddMoviePage)
+  },
+  {
+    path: 'edit-movie/:listId/:movieId',
+    loadComponent: () => import('./pages/add-movie/add-movie.page').then(m => m.AddMoviePage),
+  },
+  {
+    path: 'add-movie/:listId',
+    loadComponent: () => import('./pages/add-movie/add-movie.page').then(m => m.AddMoviePage),
+  },
 ];

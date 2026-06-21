@@ -1,0 +1,102 @@
+<ion-content [fullscreen]="true">
+
+  <div class="movies-container">
+
+    <div class="top-bar">
+      <ion-button fill="clear" class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+
+      <div>
+        <h1>{{ listName }}</h1>
+        <p>Filmovi u ovoj listi</p>
+      </div>
+    </div>
+
+    <ion-button expand="block" class="create-btn" (click)="goToAddMovie()">
+      <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+      Dodaj film
+    </ion-button>
+
+    <ion-segment
+    class="filter-segment"
+    [(ngModel)]="filterStatus">
+
+    <ion-segment-button value="all">
+      <ion-label>Svi</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="watched">
+      <ion-label>Odgledani</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="planned">
+      <ion-label>Planirani</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+  <ion-searchbar
+    placeholder="Pretraži film..."
+    [(ngModel)]="searchText"
+    animated="true">
+  </ion-searchbar>
+
+    <div class="movies-section">
+
+      <h2>Svi filmovi</h2>
+
+      <p class="empty-text" *ngIf="filteredMovies.length === 0">
+        Još uvek nema dodatih filmova.
+      </p>
+
+<div class="movie-card" *ngFor="let movie of filteredMovies">
+
+  <div class="movie-main">
+    <div class="movie-icon">🎬</div>
+
+    <div class="movie-details">
+      <h3>{{ movie.title }}</h3>
+      <p>
+      {{ movie.genre || 'Žanr nije unet' }}
+
+      <span *ngIf="movie.year">
+        • {{ movie.year }}
+      </span>
+    </p>
+
+      <div class="rating" *ngIf="movie.rating">
+      ⭐ {{ movie.rating }}/10
+    </div>
+
+    <div class="rating" *ngIf="!movie.rating">
+      ⭐ Bez ocene
+    </div>
+
+      <span class="status watched" *ngIf="movie.watched">
+        Odgledan
+      </span>
+
+      <span class="status planned" *ngIf="!movie.watched">
+        Planirano
+      </span>
+
+      <div class="movie-actions">
+        <ion-button fill="clear" size="small" (click)="editMovie(movie)">
+          Izmeni
+        </ion-button>
+
+        <ion-button fill="clear" size="small" color="danger" (click)="deleteMovie(movie)">
+          Obriši
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+  </div>
+
+</ion-content>

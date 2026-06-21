@@ -52,7 +52,7 @@
         Još uvek nemate kreirane liste.
       </p>
 
-      <div class="movie-list-card" *ngFor="let list of lists">
+      <div class="movie-list-card" *ngFor="let list of lists" (click)="otvoriFilm(list)">
         <div class="list-left">
           <div class="list-icon">🎬</div>
 
