@@ -57,7 +57,7 @@ export class RegisterPage implements OnInit {
       return;
     }
 
-    this.authService.register(this.email, this.password, this.name).subscribe({
+    this.authService.register(this.email, this.password, this.name, this.prezime).subscribe({
       next: () => {
         this.prikaziPoruku('Uspešna registracija.');
         this.router.navigate(['/login']);

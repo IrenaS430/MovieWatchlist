@@ -18,7 +18,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-register(email: string, password: string, ime: string) {
+register(email: string, password: string, ime: string, prezime: string) {
   return this.http.post<any>(this.signUpUrl, {
     email,
     password,
@@ -29,11 +29,13 @@ register(email: string, password: string, ime: string) {
       localStorage.setItem('userId', response.localId);
       localStorage.setItem('email', response.email);
       localStorage.setItem('ime', ime);
+      localStorage.setItem('prezime', prezime);
 
       this.http.put(
         `${this.databaseUrl}/users/${response.localId}/profile.json?auth=${response.idToken}`,
         {
           ime,
+          prezime,
           email: response.email
         }
       ).subscribe();

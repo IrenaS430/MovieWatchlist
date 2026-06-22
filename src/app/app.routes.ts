@@ -22,22 +22,28 @@ export const routes: Routes = [
   },
     {
     path: 'movies',
-    loadComponent: () => import('./pages/movies/movies.page').then( m => m.MoviesPage)
+    loadComponent: () => import('./pages/movies/movies.page').then( m => m.MoviesPage),
+    canActivate: [authGuard]
   },
   {
     path: 'movies/:listId',
     loadComponent: () => import('./pages/movies/movies.page').then(m => m.MoviesPage),
+      canActivate: [authGuard]
+  
   },
   {
     path: 'add-movie',
-    loadComponent: () => import('./pages/add-movie/add-movie.page').then( m => m.AddMoviePage)
+    loadComponent: () => import('./pages/add-movie/add-movie.page').then( m => m.AddMoviePage),
+      canActivate: [authGuard]
   },
   {
     path: 'edit-movie/:listId/:movieId',
     loadComponent: () => import('./pages/add-movie/add-movie.page').then(m => m.AddMoviePage),
+      canActivate: [authGuard]
   },
   {
     path: 'add-movie/:listId',
     loadComponent: () => import('./pages/add-movie/add-movie.page').then(m => m.AddMoviePage),
+     canActivate: [authGuard]
   },
 ];

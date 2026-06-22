@@ -61,6 +61,11 @@ export class AddMoviePage implements OnInit {
   genres = [
     'Komedija',
     'Romantika',
+    'Sci-Fi',
+    'Triler',
+    'Avantura',
+    'Animirani',
+    'Drama'
   ];
 
   constructor(
