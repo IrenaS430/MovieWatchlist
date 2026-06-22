@@ -46,7 +46,6 @@ export class LoginPage implements OnInit {
 
     this.authService.login(this.email, this.password).subscribe({
       next: () => {
-        this.prikaziPoruku('Uspešna prijava.');
         this.router.navigate(['/home']);
       },
       error: () => {

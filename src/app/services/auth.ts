@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap,  switchMap, map } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
 
-  private apiKey = 'AIzaSyB_hBiovUfyx5IC5ptGx7-jPlSG9r4wBNQ';
-  private databaseUrl = 'https://moviewatchlist-2a6f8-default-rtdb.europe-west1.firebasedatabase.app';
+  private apiKey = environment.firebaseApiKey;
+  private databaseUrl = environment.firebaseDatabaseUrl;
 
   private signUpUrl =
     `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.apiKey}`;
